@@ -28,4 +28,18 @@ export class LoginComponent {
       });
     });
   }
+
+  public facebookAuth() {
+    this._authService.facebookAuth().then(token => {
+      this._userService.getUserInfo(token).subscribe({
+        next: (user) => {
+          this._userService.setUser(user);
+          this._router.navigate(['/user-information']);
+        },
+        error: (err) => {
+          console.error('Error autenticando en backend', err);
+        }
+      });
+    });
+  }
 }
