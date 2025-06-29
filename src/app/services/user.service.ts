@@ -6,7 +6,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private _apiUrl = 'https://login-app-com610-backend.onrender.com/api/user/userInfo';
+  private _apiUrl = 'https://login-app-com610-backend-jd7t.onrender.com/api/user/userInfo';
   private _userSubject = new BehaviorSubject<any>(null);
 
   constructor(private _http: HttpClient) { }
